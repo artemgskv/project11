@@ -2,6 +2,7 @@
   "name": "project11",
   "version": "1.0.0",
   "main": "index.js",
+
   "scripts": {
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
@@ -12,7 +13,7 @@
     "url": "git+https://github.com/artemgskv/project11.git"
   },
   "author": "Artem Guskov",
-  "description": "Ya project 11",
+  "description": "Yandex Praktikum Project 11",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/artemgskv/project11/issues"
