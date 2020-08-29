@@ -1,0 +1,9 @@
+@import url(./__content/popup-image__content.css);
+
+.popup-image {
+  position: relative;
+  max-height: 80vh;
+  max-width: 80vw;
+  box-sizing: border-box;
+  border-radius: 10px;
+  }

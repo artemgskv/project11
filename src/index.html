@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="user-info__edit-button" type="button" id="profile-edit-button">Edit</button>
+        </div>
+        <button class="button user-info__button" id="places-add-button">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+
+
+      <template id="card-template">
+        <div class="place-card">
+          <div class="place-card__image">
+            <button class="place-card__delete-icon"></button>
+          </div>
+          <div class="place-card__description">
+            <h3 class="place-card__name"></h3>
+            <button class="place-card__like-icon"></button>
+          </div>
+        </div>
+      </template>
+
+
+    </div>
+
+    <div class="popup" id="profile-popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close" id="profile-close-button">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" id="profile" novalidate>
+            <input type="text" id="username" class="popup__input" placeholder="Имя"  minlength="2" maxlength="30" required>
+            <span id="username-error" class="error"></span>
+            <input type="text" id="bio" class="popup__input popup__input_type_link-url" placeholder="О себе" minlength="2" required>
+            <span id="bio-error" class="error"></span>
+            <button type="submit" class="button popup__button popup__button_profile" id="profile-submit-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id="places-popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close" id="places-close-button">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" id="places" novalidate>
+            <input type="text" id="name" class="popup__input popup__input_type_name" placeholder="Название" required minlength="2" maxlength="30">
+            <span id="name-error" class="error"></span>
+            <input type="url" id="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку" required minlength="2">
+            <span id="link-error" class="error"></span>
+            <button type="submit" class="button popup__button popup__button_disabled" id="places-submit-button" disabled>+</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id="image-popup">
+      <div class="popup-image__content">
+        <img class="popup-image" src="" id="image-popup-background">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close" id="image-close-button">
+      </div>
+    </div>
+
+  </div>
+  <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
+</body>
+</html>
